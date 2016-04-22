@@ -1,0 +1,21 @@
+<div class="page-header">
+  <div class="row">
+    <div class="col-md-10">
+      <h1><%= t '.title', default: t('global.edit.title') %></h1>
+    </div>
+    <div class="col-md-2 text-right">
+      <div class="header-actions">
+        <%= link_to icon('chevron-left'), institution_path(@dependency.parent),
+          class: 'btn-sm btn btn-default button-position',
+          data: { toggle: 'tooltip', container: 'body' },
+          title: t('dependencies.actions.back', default: t('global.actions.back')) %>
+        <%= link_to icon('eye-open'), dependency_path(@dependency),
+          class: 'btn-sm btn btn-success button-position',
+          data: { toggle: 'tooltip', container: 'body' },
+          title: t('dependencies.actions.show', default: t('global.actions.show')) %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'form' %>

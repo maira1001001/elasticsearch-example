@@ -1,0 +1,17 @@
+<div class="page-header">
+  <div class="row">
+    <div class="col-md-10">
+      <h1><%= t 'dependencies.new.title', default: t('global.new.title') %></h1>
+    </div>
+    <div class="col-md-2">
+      <div class="header-actions text-right">
+        <%= link_to icon('chevron-left'), institution_path(@dependency.parent),
+          class: 'btn btn-default btn-sm button-position',
+          data: { toggle: 'tooltip', container: 'body'  },
+          title: t('dependencies.actions.back', default: t('global.actions.back')) %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'form' %>

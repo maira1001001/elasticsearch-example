@@ -1,0 +1,15 @@
+<div class="row">
+  <%= simple_nested_form_for @institution do |f| %>
+    <%= f.error_notification  %>
+    <div class="row">
+      <%= f.input :name, wrapper_html: { class: 'col-md-4' } %>
+      <%= f.input :address, wrapper_html: { class: 'col-md-4' } %>
+    </div>
+    <div class="row">
+      <div class="form-actions col-md-12">
+        <%= f.submit class: 'btn btn-success',
+          value: t('.submit', default: t('global.form.actions.submit')) %>
+      </div>
+    </div>
+  <% end %>
+</div>

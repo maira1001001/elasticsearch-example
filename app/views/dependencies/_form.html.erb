@@ -1,0 +1,21 @@
+<div class="row">
+  <%= simple_nested_form_for @dependency do |f| %>
+    <%= f.error_notification  %>
+    <%= f.input :parent_id, as: :hidden %>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :name %>
+      </div>
+     <div class="col-md-4">
+        <%= f.input :address %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-actions col-md-12">
+        <%= f.submit class: 'btn btn-success',
+          value: t('.submit', default: t('global.form.actions.submit')) %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+es:
+  simple_form:
+    "yes": 'Sí'
+    "no" : 'No'
+    required:
+      text: "Este campo debe ser completado"
+      mark: "*"
+    error_notification:
+      default_message: |
+        Se encontraron errores en los datos ingresados. Por favor, revise los problemas
+        indicados a continuación y reintente la operación.
+

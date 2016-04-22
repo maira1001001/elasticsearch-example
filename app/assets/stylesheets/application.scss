@@ -1,0 +1,40 @@
+/*
+ *= bootstrap-material-design
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap-variables";
+@import "bootstrap";
+@import "bootstrap-generators";
+
+.navbar .navbar-nav > li > a {
+  padding-top: 2em!important;
+}
+
+.navbar-default {
+ background-color: #005f61 !important;
+ border-color: #003f40;
+}
+
+.sub_title{ color: #696666; }
+
+.contact-info{
+  font-size: 1.3em;
+  margin-bottom: 2px;
+}
+
+.contact-detail {
+  color: #005F61;
+  font-size: 0.97em;
+  margin-bottom: 1.5em;
+}
+
+.button-position {
+  top: 1.5em;
+}
+
+.btn-default {
+  background-color: #ddd!important;
+}

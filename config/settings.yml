@@ -1,0 +1,18 @@
+application_name: Ejemplo Elasticsearch
+
+google_maps:
+  api_key: AIzaSyBz--WzKd8-GFypaqhrBDRWQBoFMv_72nw
+
+elasticsearch:
+  client:
+    url: "http://localhost:9200"
+  default_settings:
+    index_name: contact_index
+    document_type: contact_index
+    index:
+      analysis:
+        filter:
+          es_stopwords:
+            type: stop
+            stopwords: '_spanish_'
+

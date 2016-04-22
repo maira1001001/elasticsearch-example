@@ -1,0 +1,13 @@
+== README
+
+Este proyecto es un ejemplo en Ruby on Rails que vincula la conexión entre una base de 
+datos en mysql con elasticsearch. 
+
+
+Basicamente se realiza un mapeo de sql al documento de elasticsearch.
+
+Mapeo(ddbb_sql)=elasticsearch_document
+
+![Ejemplo mapeo](db_to_elasticsearch_index_mapping.png)
+
+

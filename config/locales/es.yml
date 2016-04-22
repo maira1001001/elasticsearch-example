@@ -1,0 +1,66 @@
+es:
+  views:
+    application:
+      title: "Agenda Telefónica"
+  navbar:
+    contacts:
+      new: "Nuevo Contacto"
+  institutions:
+    index:
+      title: "Listado de Instituciones"
+    new:
+      title: "Nueva Institución"
+    show:
+      title: "Detalles de la Institución"
+    edit:
+      title: "Editar institución"
+    actions:
+      new:    "Nueva Institución"
+      back:   "Volver a instituciones"
+      edit:   "Editar institución"
+      destroy: "Eliminar institución"
+      confirm_destroy: "¿Está seguro que desea eliminar la institución seleccionada?"
+    list:
+      empty: "Aún no existen instituciones creadas. Por favor, cree una. "
+    children:
+      title: "Dependencias"
+      description: "Listado de las Dependencias que pertenecen a la Institución %{institution_name}"
+      empty: "No hay información cargada de las dependencias"
+  dependencies:
+    index:
+      title: "Listado de dependencias"
+    new:
+      title: "Nueva dependencia"
+    show:
+      title: "Detalles de la dependencia"
+    edit:
+      title: "Editar dependencia"
+    actions:
+      new: "Nueva dependencia"
+      back: "Volver a la institución"
+      edit: "Editar dependencia"
+      destroy: "Eliminar dependencia"
+      confirm_destroy: "¿Está seguro que desea eliminar la dependencia seleccionada?"
+    list:
+      empty: "Aún no existen dependencias creadas. Por favor, cree una."
+    children:
+      title: "Oficinas"
+      description: "Listado de las Oficinas que pertenecen a la Dependencia %{dependency_name}"
+      empty: "No hay información cargada de las oficinas"
+  offices:
+    index:
+      title: "Listado de oficinas"
+    new:
+      title: "Nueva oficina"
+    show:
+      title: "Detalles de la oficina"
+    edit:
+      title: "Editar oficina"
+    actions:
+      new:  "Nueva oficina"
+      back: "Volver a la dependencia"
+      edit: "Editar oficina"
+      destroy: "Eliminar oficina"
+      confirm_destroy: "¿Está seguro que desea eliminar la oficina seleccionada?"
+    list:
+      empty: "Aún no existen oficinas creadas. Por favor, cree una."

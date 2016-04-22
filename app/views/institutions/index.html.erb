@@ -1,0 +1,26 @@
+<div class="page-header">
+  <div class="row">
+    <div class="col-md-10">
+      <h1><%= t'institutions.index.title' %></h1>
+    </div>
+    <div class="col-md-2">
+      <%= link_to new_institution_path, class: 'btn btn-sm btn-success button-position',
+        data: { toggle: 'tooltip', placement: 'body' } do %>
+        <%#= icon('plus') %>
+        <strong><%= t('institutions.actions.new') %></strong>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <% if @institutions.empty? %>
+      <div class="alert alert-info" role="alert">
+        <%= t "institutions.list.empty"  %>
+      </div>
+    <% else %>
+      <%= render partial: 'institutions', locals: { institutions: @institutions  } %>
+    <% end %>
+  </div>
+</div>

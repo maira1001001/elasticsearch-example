@@ -1,0 +1,23 @@
+es:
+  activerecord:
+    models:
+      contact:          "Contacto"
+      institucion:      "Institucion"
+    attributes:
+      institution:
+        name:           "Nombre"
+        address:        "Dirección"
+        geolocation:    "Geolocalización"
+      dependency:
+        name:           "Nombre"
+        address:        "Dirección"
+        geolocation:    "Geolocalización"
+      office:
+        name:           "Nombre"
+        address:        "Dirección"
+        geolocation:    "Geolocalización"
+    errors:
+      messages:
+        blank:   "No puedes dejar este campo en blanco."
+        incorrect_email_format:     "Formato de email incorrecto."
+

@@ -1,0 +1,32 @@
+<div class="page-header">
+  <div class="row">
+    <div class="col-md-10">
+      <h1><%= t 'offices.show.title', default: t('global.show.title') %></h1>
+    </div>
+    <div class="col-md-2">
+      <div class="header-actions">
+        <%= link_to icon('chevron-left'), dependency_path(@office.parent_id),
+          class: 'btn btn-default btn-sm button-position',
+          data: { toggle: 'tooltip', container: 'body' },
+          title: t('offices.actions.back') %>
+        <%= link_to icon('pencil'), edit_office_path(@office),
+          class: 'btn btn-warning btn-sm button-position',
+          data: { toggle: 'tooltip', placement: 'bottom' },
+          title: t('offices.actions.edit') %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <p class="contact-info"><%= @office.name %></p>
+    <p class="contact-detail"><%= t('activerecord.attributes.contact.name') %></p>
+  </div>
+  <div class="col-md-6">
+    <% unless @office.address.blank? %>
+      <p class="contact-info"><%= @office.address %></p>
+      <p class="contact-detail"><%= t('activerecord.attributes.contact.address') %></p>
+    <% end %>
+  </div>
+</div>

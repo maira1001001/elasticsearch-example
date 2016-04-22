@@ -1,0 +1,11 @@
+es:
+  flash:
+    actions:
+      create:
+        notice: "La operación se realizó con éxito."
+      update:
+        notice: "La operación se realizó con éxito."
+      destroy:
+        notice: "La operación se realizó con éxito."
+        alert: "La operación no pudo realizarse correctamente."
+

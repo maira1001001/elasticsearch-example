@@ -1,0 +1,17 @@
+<div class="page-header">
+  <div class="row">
+    <div class="col-md-8">
+      <h1><%= t 'offices.new.title', default: t('global.new.title') %></h1>
+    </div>
+    <div class="col-md-4">
+      <div class="header-actions text-right">
+        <%= link_to icon('chevron-left'), dependency_path(@office.parent),
+          class: 'btn btn-default btn-sm button-position',
+          data: { toggle: 'tooltip', container: 'body'  },
+          title: t('.back', default: t('global.actions.back')) %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'form' %>

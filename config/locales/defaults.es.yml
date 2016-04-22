@@ -1,0 +1,23 @@
+es:
+  global:
+    index:
+      actions: Acciones
+    show:
+      title: Detalles
+    new:
+      title: Nuevo
+    edit:
+      title: Modificar
+    actions:
+      new: Nuevo
+      show: Ver detalles
+      edit: Modificar
+      destroy: Borrar
+      back: Volver
+      confirm_destroy: ¿Está seguro que desea borrar el elemento seleccionado?
+    form:
+      actions:
+        submit: Guardar cambios
+    tooltip:
+      add: Agregar
+      destroy: eliminar

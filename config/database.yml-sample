@@ -1,0 +1,9 @@
+development:
+  database: elasticsearch-example
+  adapter:  mysql2
+  encoding: utf8
+  pool:     5
+  username: #USER#
+  password: #PASSWORD#
+  host:     #HOST#
+

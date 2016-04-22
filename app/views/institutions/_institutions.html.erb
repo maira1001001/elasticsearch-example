@@ -1,0 +1,31 @@
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th><%= t 'activerecord.attributes.institution.name' %></th>
+        <th><%= t 'activerecord.attributes.institution.address' %></th>
+        <th><%= t '.actions', default: t('global.index.actions') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= content_tag_for(:tr, institutions) do |institution| %>
+        <td><%= institution.name %></td>
+        <td><%= institution.address %></td>
+        <td>
+          <%= link_to icon('eye-open'), institution_path(institution),
+            class: 'btn btn-xs btn-success',
+            title: t('institutions.actions.show', default: t('global.actions.show')),
+            data: { toggle: 'tooltip', container: 'body', placement: 'bottom' } %>
+          <%= link_to icon('pencil'), edit_institution_path(institution),
+            class: 'btn btn-xs btn-warning',
+            title: t('institutions.actions.edit', default: t('global.actions.edit')),
+            data: { toggle: 'tooltip', container: 'body', placement: 'bottom' } %>
+          <%= link_to icon('trash'), institution_path(institution),  method: :delete,
+            class: 'btn btn-xs btn-danger',
+            title: t('institutions.actions.destroy', default: t('global.actions.destroy')),
+            data: { confirm: t('institutions.actions.confirm_destroy', default: t('global.actions.confirm_destroy')), toggle: 'tooltip', placement: 'bottom' } %>
+        </td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

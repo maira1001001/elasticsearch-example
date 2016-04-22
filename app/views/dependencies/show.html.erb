@@ -1,0 +1,56 @@
+<div class="page-header">
+  <div class="row">
+    <div class="col-md-10">
+      <h1><%= t 'dependencies.show.title', default: t('global.show.title') %></h1>
+    </div>
+    <div class="col-md-2">
+      <div class="header-actions">
+        <%= link_to icon('chevron-left'), institution_path(@dependency.parent_id),
+          class: 'btn btn-sm btn-default button-position',
+          data: { toggle: 'tooltip', container: 'body' },
+          title: t('dependencies.actions.back') %>
+        <%= link_to icon('pencil'), edit_dependency_path(@dependency),
+          class: 'btn btn-sm btn-warning button-position',
+          data: { toggle: 'tooltip', placement: 'bottom' },
+          title: t('dependencies.actions.edit') %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <% unless @dependency.name.blank? %>
+      <p class="contact-info"><%= @dependency.name %></p>
+      <p class="contact-detail"><%= t('activerecord.attributes.contact.name') %></p>
+    <% end %>
+  </div>
+
+  <div class="col-md-6">
+    <% unless @dependency.address.blank? %>
+      <p class="contact-info"><%= @dependency.address %></p>
+      <p class="contact-detail"><%= t('activerecord.attributes.contact.address') %></p>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-10">
+    <h2><%= t("dependencies.children.title") %></h2>
+    <p class="sub_title"><%= t("dependencies.children.description", dependency_name: @dependency.name) %></p>
+  </div>
+  <div class="col-md-2 text-right">
+    <%= link_to new_office_path(parent_id: @dependency.id),
+      title: t('offices.new.title'),
+      class: 'btn btn-success btn-sm button-position',
+      data: { toggle: 'tooltip', container: 'body' } do %>
+      <%= t 'offices.new.title' %>
+    <% end %>
+  </div>
+</div>
+<% if @dependency.children.empty? %>
+  <div class="alert alert-info" role="alert"><%= t 'dependencies.children.empty' %></div>
+<% else %>
+  <%= render partial: 'offices/offices', locals: { offices: @dependency.children  } %>
+<% end %>
+

@@ -1,0 +1,31 @@
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th><%= t 'activerecord.attributes.contact.name' %></th>
+        <th><%= t 'activerecord.attributes.contact.address' %></th>
+        <th><%= t '.actions', default: t('global.index.actions') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= content_tag_for(:tr, dependencies) do |dependency| %>
+        <td><%= dependency.name %></td>
+        <td><%= dependency.address %></td>
+        <td>
+          <%= link_to icon('eye-open'), dependency_path(dependency),
+            class: 'btn btn-xs btn-success',
+            title: t('dependencies.actions.show', default: t('global.actions.show')),
+            data: { toggle: 'tooltip', container: 'body', placement: 'bottom' } %>
+          <%= link_to icon('pencil'), edit_dependency_path(dependency),
+            class: 'btn btn-xs btn-warning',
+            title: t('dependencies.actions.edit', default: t('global.actions.edit')),
+            data: { toggle: 'tooltip', container: 'body', placement: 'bottom' } %>
+          <%= link_to icon('trash'), dependency_path(dependency),  method: :delete,
+            class: 'btn btn-xs btn-danger',
+            title: t('dependencies.actions.destroy', default: t('global.actions.destroy')),
+            data: { confirm: t('dependencies.actions.confirm_destroy', default: t('global.actions.confirm_destroy')), toggle: 'tooltip', placement: 'bottom' } %>
+        </td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

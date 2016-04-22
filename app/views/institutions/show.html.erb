@@ -1,0 +1,56 @@
+<div class="page-header">
+  <div class="row">
+    <div class="col-md-10">
+      <h1><%= t 'institutions.show.title', default: t('global.show.title') %></h1>
+    </div>
+    <div class="col-md-2">
+      <div class="header-actions">
+        <%= link_to icon('chevron-left'), institutions_path,
+          class: 'btn btn-sm btn-default button-position',
+          data: { toggle: 'tooltip', container: 'body' },
+          title: t('institutions.actions.back') %>
+        <%= link_to icon('pencil'), edit_institution_path(@institution),
+          class: 'btn btn-sm btn-warning button-position',
+          data: { toggle: 'tooltip', placement: 'bottom' },
+          title: t('institutions.actions.edit') %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <% unless @institution.name.blank? %>
+      <p class="contact-info"><%= @institution.name %></p>
+      <p class="contact-detail"><%= t('activerecord.attributes.contact.name') %></p>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <% unless @institution.address.blank? %>
+      <p class="contact-info"><%= @institution.address %></p>
+      <p class="contact-detail"><%= t('activerecord.attributes.contact.address') %></p>
+    <% end %>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-9">
+    <h2><%= t("institutions.children.title") %></h2>
+    <p class="sub_title"><%= t("institutions.children.description", institution_name: @institution.name) %></p>
+  </div>
+  <div class="col-md-2 pull-right">
+    <%= link_to new_dependency_path(parent_id: @institution.id),
+      title: t('dependencies.new.title'),
+      class: 'btn btn-sm btn-success button-position',
+      data: { toggle: 'tooltip', container: 'body' } do %>
+      <%= t 'dependencies.new.title' %>
+    <% end %>
+  </div>
+</div>
+
+
+<% if @institution.children.empty? %>
+  <div class="alert alert-info" role="alert"><%= t 'institutions.children.empty' %></div><br>
+<% else %>
+  <%= render partial: 'dependencies/dependencies', locals: { dependencies: @institution.children  } %>
+<% end %>
